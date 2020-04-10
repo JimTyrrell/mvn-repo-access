@@ -22,7 +22,7 @@
 	<parent>
 	    <groupId>org.redhat.fuse</groupId>
 	    <artifactId>mvn-repo-access</artifactId>
-	    <version>7.6.0-SNAPSHOT</version>
+	    <version>7.5.0-SNAPSHOT</version>
 	</parent>
 	
     <artifactId>mvn-repo-access-wildfly-camel</artifactId>
@@ -34,6 +34,18 @@
         but all its dependencies individually 
     -->    
 	<dependencies>
+        <dependency>
+            <groupId>org.wildfly.camel</groupId>
+            <artifactId>wildfly-camel-feature-altmodA</artifactId>
+            <version>${version.wildfly.camel}</version>
+            <type>pom</type>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jboss.eap</groupId>
+                    <artifactId>wildfly-feature-pack</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 		<dependency>
 			<groupId>org.wildfly.camel</groupId>
 			<artifactId>wildfly-camel-feature-modules</artifactId>
@@ -41,8 +53,8 @@
             <type>pom</type>
             <exclusions>
                 <exclusion>
-                    <groupId>org.jboss.eap</groupId>
-                    <artifactId>wildfly-feature-pack</artifactId>
+                    <groupId>org.wildfly.camel</groupId>
+                    <artifactId>wildfly-camel-feature-altmodA</artifactId>
                 </exclusion>
             </exclusions>
 		</dependency>
@@ -84,22 +96,14 @@
         </dependency>
         <dependency>
             <groupId>org.wildfly.camel</groupId>
-            <artifactId>wildfly-camel-feature-extrasD</artifactId>
+            <artifactId>wildfly-camel-feature-pack</artifactId>
             <version>${version.wildfly.camel}</version>
             <type>pom</type>
             <exclusions>
                 <exclusion>
                     <groupId>org.wildfly.camel</groupId>
-                    <artifactId>wildfly-camel-feature-extrasC</artifactId>
+                    <artifactId>wildfly-camel-feature-altmodA</artifactId>
                 </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.wildfly.camel</groupId>
-            <artifactId>wildfly-camel-feature-pack</artifactId>
-            <version>${version.wildfly.camel}</version>
-            <type>pom</type>
-            <exclusions>
                 <exclusion>
                     <groupId>org.wildfly.camel</groupId>
                     <artifactId>wildfly-camel-feature-modules</artifactId>
@@ -115,10 +119,6 @@
                 <exclusion>
                     <groupId>org.wildfly.camel</groupId>
                     <artifactId>wildfly-camel-feature-extrasC</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.wildfly.camel</groupId>
-                    <artifactId>wildfly-camel-feature-extrasD</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

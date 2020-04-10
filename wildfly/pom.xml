@@ -22,7 +22,7 @@
 	<parent>
 	    <groupId>org.redhat.fuse</groupId>
 	    <artifactId>mvn-repo-access</artifactId>
-	    <version>7.6.0-SNAPSHOT</version>
+	    <version>7.5.0-SNAPSHOT</version>
 	</parent>
 	
     <artifactId>mvn-repo-access-wildfly</artifactId>
